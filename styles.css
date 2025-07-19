@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  color: #333;
+  line-height: 1.5;
+}
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 40px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+#hero {
+  text-align: center;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+}
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+  min-height: 3rem;
+}
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+#hero button {
+  background: #805ad5;
+  color: #fff;
+  border: none;
+  padding: .8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+#hero button:hover {
+  background: #553c9a;
+}
+.section {
+  padding: 60px 0;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.gallery-item {
+  background: #f2f2f2;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform .3s ease;
+}
+.gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+.gallery-item p {
+  margin-top: .5rem;
+  font-weight: 600;
+}
+.features-grid,
+.pricing-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.features-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.pricing-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+}
+.feature-card,
+.price-card {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.feature-card {
+  border: 1px solid #ddd;
+}
+.price-card {
+  border: 2px solid #805ad5;
+}
+.price-card.featured {
+  background: #805ad5;
+  color: #fff;
+}
+.price-card button {
+  margin-top: 1rem;
+  border: none;
+  padding: .8rem 1.2rem;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.price-card button:hover {
+  opacity: .9;
+}
+.why-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.why-card {
+  flex: 1 1 250px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+.testimonial {
+  margin-top: 1rem;
+  font-style: italic;
+}
+.testimonial strong {
+  margin-top: .5rem;
+  display: block;
+  text-align: right;
+}
+.accordion-item {
+  margin-bottom: 1rem;
+}
+.accordion-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-weight: bold;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+  background: #f9f9f9;
+  padding: 0 1rem;
+  border-radius: 0 0 4px 4px;
+}
+.accordion-btn.active + .accordion-content {
+  max-height: 200px;
+  padding: 1rem;
+}
+form {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+input[type="email"] {
+  padding: .8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: .9rem;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.footer-links a {
+  text-decoration: none;
+  color: #805ad5;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform .3s ease;
+}
+.social-icons a:hover img {
+  transform: scale(1.15);
+}
+@media (max-width: 600px) {
+  .gallery-grid,
+  .features-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: .5rem;
+  }
+}
+/* Toast Notification */
+.toast-snackbar {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  opacity: 0;
+  z-index: 1000;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.toast-snackbar.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
